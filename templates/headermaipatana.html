@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html land="en">
+<html lang="en">
 <head>
 <meta charset = "utf-8">
 	<title>maipatana's {% block title %}{% endblock %}</title>
@@ -11,26 +11,18 @@
 	<link rel = "shortcut icon" href = "{{ url_for('static', filename = 'favicon.ico')}}">
 	<link rel="stylesheet" href="{{ url_for('static', filename = 'fonts/thsarabunnew.css')}}"/>
 </head>
-<header>
-{% include "_navbar.html" %}
-</header>
-<body style = "font-family: 'THSarabunNew', sans-serif; background-color: #1a1a1a; color: #ececec; margin: 0 auto;
- max-width:900px; padding: 10px">
-	<div class = "container-fluid" style = "min-height: 100%">
+<body style="min-height: 100%; font-family: 'THSarabunNew', sans-serif;
+	background-color: #9fb39f; color: #1a1a1a; margin: 0 auto; max-width: 900px; padding: 10px">
+	<div class="container-fluid">
+		<header>
+			{% include "_navbar.html" %}
+		</header>
 	{% block body %}{% endblock %}
 	</div>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 </body>
 <footer class="text-center">
-	<div class="footer-below">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-					Copyright &copy; maipatana.me 2016
-				</div>
-			</div>
-		</div>
-    </div>
+	{% include "_footer.html" %}
 </footer>
 </html>

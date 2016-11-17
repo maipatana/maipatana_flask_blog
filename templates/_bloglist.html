@@ -1,6 +1,6 @@
 {% for post in posts %}
 <div class="card card-block">
-<div class="container">
+<div class="container-fluid">
 <h4 class="card-title">
 	<a href="{{ url_for('post', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }}</strong></a>
 </h4>
@@ -8,7 +8,7 @@
 <p class="card-text">{{ post.des }}</p>
 	<p class="card-text">tags:
 {% for i in post.tags %}
-	 <a href="{{ url_for('tags', tag=i) }}" style="color: #ececec;"><strong>  {{ i }}</strong></a>,
+	 <a href="{{ url_for('tags', tag=i) }}"><strong>  {{ i }}</strong></a>,
 {% endfor %}
 	</p>
 </div>
@@ -28,7 +28,7 @@
             </li>
               {% for i in pages %}
                 {% if i == page %}
-                    <li class="active"><a href="{{ url_for('tags', tag=tag, page=i) }}">{{i}} <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="#title">{{i}} <span class="sr-only">(current)</span></a></li>
                 {% else %}
                     <li><a href="{{ url_for('tags', tag=tag, page=i) }}">{{i}}</a></li>
                 {% endif %}
@@ -58,7 +58,7 @@
             </li>
               {% for i in pages %}
                 {% if i == page %}
-                    <li class="active"><a href="{{ url_for('posts', page=i) }}">{{i}} <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="#title">{{i}} <span class="sr-only">(current)</span></a></li>
                 {% else %}
                     <li><a href="{{ url_for('posts', page=i) }}">{{i}}</a></li>
                 {% endif %}
