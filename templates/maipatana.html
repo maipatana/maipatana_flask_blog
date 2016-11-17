@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+	<meta charset = "utf-8">
+	<title>maipatana's home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link href = "{{ url_for('static', filename = 'css/bootstrap.css')}}" rel="stylesheet">
+	<link href = "{{ url_for('static', filename = 'css/font-awesome.css')}}" rel="stylesheet">
+	<link rel = "shortcut icon" href = "{{ url_for('static', filename = 'favicon.ico')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'fonts/thsarabunnew.css')}}"/>
+</head>
+<header>
+<div id="page-top" class="index">
+     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> maipatana <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('posts') }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> blogs</a></li>
+                    <li><a href="{{ url_for('tutorials') }}"><span class="fa fa-desktop" aria-hidden="true"></span> tutorials</a></li>
+                    <li><a href="{{ url_for('projects') }}"><span class="fa fa-file-code-o" aria-hidden="true"></span> projects</a></li>
+                    <li><a href="{{ url_for('aboutme') }}""><span class="fa fa-id-card-o" aria-hidden="true"></span> about me</a></li>
+                </ul>
+            </div>
+        </div>
+     </nav>
+</div>
+</header>
+<br><br><br>
+<body style="font-family: 'THSarabunNew', sans-serif; background-color: #9fb39f; color: #1a1a1a; margin: 0 auto;
+ max-width:100%; padding: 10px">
+	<div class = "container" style="min-height: 100%; width: 100%;">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card-home card-block">
+					<div class="card-title">
+						<span class="glyphicon glyphicon-pencil fa-2x" aria-hidden="true"></span>
+					</div>
+					<div class="card-text">
+						<h3>Popular</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card-home card-block">
+					<div class="card-title">
+						<span class="fa fa-desktop fa-2x" aria-hidden="true"></span>
+					</div>
+					<div class="card-text">
+						<div>
+                          <!-- Nav tabs -->
+                          <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active"><a href="#energy" aria-controls="energy" role="tab" data-toggle="tab">energy</a></li>
+                            <li role="presentation"><a href="#gh" aria-controls="gh" role="tab" data-toggle="tab">grasshopper</a></li>
+                            <li role="presentation"><a href="#py" aria-controls="py" role="tab" data-toggle="tab">python</a></li>
+                          </ul>
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="energy">
+                                ......
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="gh">
+                                <div><h3>
+                                    การหาค่า Lux ด้วย LB+HB
+                                </h3></div>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Uj9PDaNi2AI" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <hr style="border-top: dotted 1px;" />
+                                <div><h3>
+                                    posts:
+                                </h3>
+                                  <p><a href="#">....</a></p>
+                                </div>
+                                <hr style="border-top: dotted 1px;" />
+                                <div><h3>
+                                    Playlist:
+                                </h3>
+                                  <p><a href="https://www.youtube.com/embed/videoseries?list=PLgQM8gTApgUyyXE-GdWUWEL9nJIzOZGz2">Grasshopper เบื้องต้น</a></p>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="py">...</div>
+                          </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card-home card-block">
+					<div class="card-title">
+						<span class="fa fa-file-code-o fa-2x" aria-hidden="true"></span>
+					</div>
+					<div class="card-text">
+                        <div><h3>
+                            Alice: Voice Recognition + Arduino
+                        </h3></div>
+						<div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/H0_RX75cx44" frameborder="0" allowfullscreen>></iframe>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+<footer class="text-center">
+	<div class="footer-below">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					Copyright &copy; maipatana.me 2016
+				</div>
+			</div>
+		</div>
+    </div>
+</footer>
+</html>

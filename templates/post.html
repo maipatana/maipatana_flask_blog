@@ -1,0 +1,64 @@
+{% extends "headermaipatana.html" %}
+{% block title %}
+    {% if tag %}
+            {{ tag }}
+            {% elif post %}
+            {{ post.title }}
+            {% else %}
+            blogs
+            {% endif %}
+    {% endblock %}
+{% block body %}
+<!-- PageTitle -->
+	{% include "_blogtitle.html"%}
+<!-- End PageTitle -->
+<!-- Page Body -->
+	<div class="row" style="margin-top:15px;">
+        <div class="col-md-12">
+		<!--<div class="col-md-8 col-md-push-4">-->
+            <div>
+			    <p class="card-text">Published: {{ post.date }}</p>
+                <p class="card-text">tags:
+				{% for i in post.tags %}
+					 <a href="{{ url_for('tags', tag=i) }}" style="color: #ececec;"><strong>  {{ i }}</strong></a>,
+				{% endfor %}
+                </p>
+			</div>
+            <hr>
+            <br>
+            <div class="card-content">
+            {{ post.html|safe }}
+            </div>
+        </div>
+<!-- End Body -->
+<!-- SideBar -->
+        <div class="col-md-6">
+	    <!--<div class="col-md-4 col-md-pull-8">-->
+            <div>
+                <hr style="border-top: dotted 1px;" />
+                <h4 class="card-title"><center>โพสล่าสุด</center></h4>
+                <hr style="border-top: dotted 1px;" />
+            </div>
+            <div>
+                {% for post in posts %}
+                <p class"card-text">
+                <a href="{{ url_for('post', name=post.path.replace('blogs/', '')) }}">{{ post.title }}</a>
+                </p>
+                {% endfor %}
+			</div>
+        </div>
+        <div class="col-md-6">
+            <hr style="border-top: dotted 1px;" />
+            {% include "_followme.html"%}
+		</div>
+        </div>
+<div class="row" style="margin-top:15px;">
+        <div class="col-md-6">
+            <hr style="border-top: dotted 1px;" />
+        </div>
+        <div class="col-md-6">
+         <hr style="border-top: dotted 1px;" />
+        </div>
+</div>
+<!-- End SideBar -->
+{% endblock %}
