@@ -1097,12 +1097,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #ffad33;
+  color: #ffffff;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #9fb39f;
+  color: #330d00;
   text-decoration: underline;
 }
 a:focus {
@@ -1565,9 +1565,7 @@ pre {
   color: #5bc0de;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: rgba(0, 0, 0, 0.5);;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 pre code {
   padding: 0;
@@ -4742,7 +4740,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   z-index: 2;
-  background-color: #1a1a1a;
+  background-color: transparent;
   border-color: #ffffff;
   box-shadow: 0 0 20px 0 #b3d9ff;
 }
@@ -4754,10 +4752,10 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   z-index: 3;
-  color: #ffad33;
+  color: #000000;
   cursor: default;
-  background-color: #1a1a1a;
-  border-color: #ffad33;
+  background-color: #ffffff;
+  border-color: #000000;
 }
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
@@ -7087,21 +7085,26 @@ button.close {
 
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 0 10px 0 #0d0d0d;
+    box-shadow: 0 0 10px 0 #9fb39f;
+    background-color: #9fb39f;
     transition: 0.3s;
     border-radius: 0px;
+    border-width:3px;
+    border-color:white;
+    border-style:double;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-    box-shadow: 0 0 20px 0 #9fb39f;
+    box-shadow: 0 0 20px 0 #0d0d0d;
 }
 
 .card-content {
     box-shadow: 0 0 10px 0 #0d0d0d;
-    background-color:#333;
+    background-color:#fff;
     padding: 15px;
     border-radius: 0px;
+    margin-bottom: 0.75rem;
 }
 
 .card-home {
@@ -7125,6 +7128,41 @@ button.close {
     padding: 2px 16px;
 }
 
+1vw = 1% of viewport width
+
+1vh = 1% of viewport height
+
+1vmin = 1vw or 1vh, whichever is smaller
+
+1vmax = 1vw or 1vh, whichever is larger
+
+h1 {
+  font-size: 36px;
+  font-size: 5.4vw;
+}
+h2 {
+  font-size: 3.0vh;
+}
+
+
+@media (max-width: 480px) {
+    .container {
+    padding:0;
+    margin:0;
+    }
+    .navbar-default{
+    padding-right: 10px;
+    padding-left: 10px;
+    }
+    .container-fluid {
+    padding:0;
+    margin:0;
+    }
+}
+
+@media (max-width: @screen-sm) {
+    body{font-size: 14px;}
+}
 
 
 /*# sourceMappingURL=bootstrap.css.map */
