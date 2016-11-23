@@ -1,0 +1,15 @@
+{% extends "headermaipatana.html" %}
+{% block body %}
+<div class="card-content">
+    {% if error %}
+        <p>Your method is not found: {{ error }} </p>
+    {% else %}
+        <h1>Something went wrong. Please go back</h1>
+    {% endif &}
+    <div><center>
+        <a class="btn btn-default" href="{{ url_for('posts') }}">blogs</a>
+        <a class="btn btn-default" href="{{ url_for('tutorials') }}">tutorials</a>
+        <a class="btn btn-default" href="{{ url_for('projects') }}">projects</a>
+    </center></div>
+</div>
+
