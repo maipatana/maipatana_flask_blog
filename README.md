@@ -6,6 +6,7 @@ I am migrating from WordPress (maipatana.me) to flask.<br>
 Hopefully I can launch this blog within this year.<br>
 
 --------2016/11/23----------
+
 The site is ready to be used.<br>
 The rest is to add more contents in /content/blogs/ folder.<br>
 Category of the post is determinded by cats tag.<br>
