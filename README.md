@@ -5,6 +5,13 @@ The are three major parts; blogs, tutorials and projects.<br>
 I am migrating from WordPress (maipatana.me) to flask.<br>
 Hopefully I can launch this blog within this year.<br>
 
+--------2016/11/23----------
+
+The site is ready to be used.<br>
+The rest is to add more contents in /content/blogs/ folder.<br>
+Category of the post is determinded by cats tag.<br>
+There are three categories at the moment: blogs, tutorials and projects.<br>
+
 --------2016/11/17----------
 
 I have done the skeleton of the website.<br>
