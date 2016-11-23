@@ -4,7 +4,7 @@
     {% if error %}
         <p> Error 500: {{ error }}</p>
     {% else %}
-        <h1>Something went wrong. Please go back</h1>
+        <center><h1>Something went wrong. Please go back</h1></center>
     {% endif %}
     <div><center>
         <a class="btn btn-default" href="{{ url_for('posts') }}">blogs</a>
@@ -12,3 +12,4 @@
         <a class="btn btn-default" href="{{ url_for('projects') }}">projects</a>
     </center></div>
 </div>
+{% endblock %}
