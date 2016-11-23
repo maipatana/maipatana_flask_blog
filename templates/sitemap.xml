@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>
+            http://maipatana.me/
+        </loc>
+    </url>
+    <url>
+        <loc>
+            http://maipatana.me/blogs/
+        </loc>
+    </url>
+    <url>
+        <loc>
+            http://maipatana.me/tutorials/
+        </loc>
+    </url>
+    <url>
+        <loc>
+            http://maipatana.me/projects/
+        </loc>
+    </url>
+    <url>
+        <loc>
+            http://maipatana.me/aboutme/
+        </loc>
+    </url>
+{% for post in posts %}
+    <url>
+    {% if post.cats == 'blogs' %}
+        <loc>http://maipatana.me{{ url_for('post', name=post.path.replace('blogs/', '')) }}</loc>
+    {% elif post.cats == 'tutorials' %}
+        <loc>http://maipatana.me{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}</loc>
+    {% elif post.cats == 'projects' %}
+        <loc>http://maipatana.me{{ url_for('project', name=post.path.replace('blogs/', '')) }}</loc>
+    {% endif %}
+        <lastmod>{{ post.date }}</lastmod>
+    </url>
+{% endfor %}
+</urlset>

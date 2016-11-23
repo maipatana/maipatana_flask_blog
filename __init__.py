@@ -49,7 +49,7 @@ def prerender_jinja(text):
     return pygmented_markdown(render_template_string(Markup(text)))
 
 app.config['FLATPAGES_ROOT'] = 'content'
-app.config['FLATPAGES_EXTENSION'] = u'.md'
+app.config['FLATPAGES_EXTENSION'] = '.md'
 app.config['FLATPAGES_HTML_RENDERER'] = prerender_jinja
 #  ------------------------ Markdown Content System Management ------------------------ #
 
@@ -72,9 +72,7 @@ def posts(page):
 def post(name):
     path = u'{}/{}'.format(POSTS_DIR, name)
     post = flatpages.get_or_404(path)
-    posts = [p for p in flatpages if p.path.startswith(POSTS_DIR)]
-    posts.sort(key=lambda item:item['date'], reverse=True)
-    return render_template('post.html', post=post, posts=posts[:5])
+    return render_template('post.html', post=post)
 
 
 @app.route('/tags/<string:tag>/', defaults={'page': 1})
@@ -108,9 +106,7 @@ def tutorials(page):
 def tutorial(name):
     path = u'{}/{}'.format(POSTS_DIR, name)
     post = flatpages.get_or_404(path)
-    posts = [p for p in flatpages if p.path.startswith(POSTS_DIR)]
-    posts.sort(key=lambda item:item['date'], reverse=True)
-    return render_template('post.html', post=post, posts=posts[:5])
+    return render_template('post.html', post=post)
 
 
 #  ------------------------------------ Projects ---------------------------------------#
@@ -132,9 +128,7 @@ def projects(page):
 def project(name):
     path = u'{}/{}'.format(POSTS_DIR, name)
     post = flatpages.get_or_404(path)
-    posts = [p for p in flatpages if p.path.startswith(POSTS_DIR)]
-    posts.sort(key=lambda item:item['date'], reverse=True)
-    return render_template('post.html', post=post, posts=posts[:5])
+    return render_template('post.html', post=post)
 
 
 #  ------------------------------------ About Me ---------------------------------------#

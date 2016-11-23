@@ -1,0 +1,41 @@
+{% from "_renderfield.html" import render_field %}
+<div style="background-color: #ffffff; width: 100%; padding-top:5px; padding-bottom:5px;" id="contact">
+    <h1>
+        <center>
+            ส่งข้อความ | message me
+        </center>
+    </h1>
+    {% if name %}
+    <div class="container-fluid" style="max-width: 100%;padding-bottom:20px;">
+        <center>
+            <h4>ขอบคุณ {{name}} สำหรับข้อความ ผมจะพยายามติดต่อกลับให้เร็วที่สุดครับ</h4>
+            <h4>Thank you {{name}} for your message. I will try to get back to you as soon as possible.</h4>
+            <form action="" method="POST" enctype ="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <button type="submit" class="btn btn-default btn-block" style="max-width:600px"><a href="{{ url_for('logout') }}">Send More Message</a></button>
+            </form>
+        </center>
+    </div>
+    {% else %}
+    <div class="container-fluid" style="max-width: 600px;padding-bottom:20px;">
+        <center>
+            <form action="" method="POST" enctype ="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <div class="form-group">
+                    {{ render_field(form.name, class_='form-control', placeholder='Name', type='txt', required="true") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.subject, class_='form-control', placeholder='Subject', type='txt', required="true") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.email, class_='form-control', placeholder='Email', type='email', required="true") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.message, class_='form-control', placeholder='Message', type='txt', required="true", style="resize: none;min-height: 200px;") }}
+                </div>
+                <button type="submit" class="btn btn-default btn-block">Send Message</button>
+            </form>
+        </center>
+    </div>
+    {% endif %}
+</div>
