@@ -1097,12 +1097,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #ffffff;
+  color: #fff1ab;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #330d00;
+  color: #1a1a1a;
   text-decoration: underline;
 }
 a:focus {
@@ -7102,6 +7102,13 @@ button.close {
 .card-content {
     box-shadow: 0 0 10px 0 #0d0d0d;
     background-color:#fff;
+    padding: 50px;
+    border-radius: 0px;
+    margin-bottom: 0.75rem;
+}
+
+.card-comment {
+    background-color:#fff;
     padding: 15px;
     border-radius: 0px;
     margin-bottom: 0.75rem;
@@ -7116,7 +7123,8 @@ button.close {
     margin-bottom: 0.75rem;
 }
 /* On mouse-over, add a deeper shadow */
-.card-content:hover {
+.card-content:hover,
+.card-comment:hover {
 }
 
 .card-home:hover {
@@ -7143,7 +7151,11 @@ h1 {
 h2 {
   font-size: 3.0vh;
 }
-
+@media (max-width: 992px) {
+    .card-img-aboutme {
+    display: none;
+    }
+}
 
 @media (max-width: 480px) {
     .container {
@@ -7164,5 +7176,70 @@ h2 {
     body{font-size: 14px;}
 }
 
+/* This gets Google to fall into place */
+.social-share {
+	font-size: 1px;
+}
 
+/* This gets Facebook to fall into place */
+.social-share iframe {
+	vertical-align: middle;
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #9fb39f;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+#return-to-top:hover i {
+    color: #9fb39f;
+    top: 5px;
+}
+.circular {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(http://link-to-your/image.jpg) no-repeat;
+	}
+
+.card-img-aboutme {
+    padding: 0px;
+    filter: grayscale(100%);
+    }
+
+.card-img-aboutme:hover{
+    filter: grayscale(0%);
+}
 /*# sourceMappingURL=bootstrap.css.map */
