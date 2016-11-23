@@ -3,12 +3,25 @@
 <div class="card-content">
     <center><h1>404</h1></center>
     <h2 class="card-title">What are you looking for either not here or has been moved.</h2>
-    <h2 class="card-text">ทางเราได้ทำการปรับเปลี่ยน website ใหม่ url ถูกเปลี่ยนใหม่ทั้งหมด ต้องขออภัยในความไม่สะดวกด้วยครับ</h2>
+    <h2 class="card-text">ผมได้ทำการปรับเปลี่ยน website ใหม่ url ถูกเปลี่ยนใหม่ทั้งหมด แต่โพสไม่ได้หายไป แค่ย้ายที่ ต้องขออภัยในความไม่สะดวกด้วยครับ</h2>
+    <hr style="border-top: dotted 1px;" />
     <h3 class="card-text">ท่านสามารถกดเข้าไปหาบทความได้จากใน</h3>
     <div><center>
         <a class="btn btn-default" href="{{ url_for('posts') }}">blogs</a>
         <a class="btn btn-default" href="{{ url_for('tutorials') }}">tutorials</a>
         <a class="btn btn-default" href="{{ url_for('projects') }}">projects</a>
     </center></div>
+    <hr style="border-top: dotted 1px;" />
+    <div>
+        <h3 class="card-text">หรือหาจาก tag ด้านล่างนี้</h3>
+    </div>
+
+        <h3>tags: </h3>|
+        {% for i in tags %}
+             <a href="{{ url_for('tags', tag=i) }}"><strong>  {{ i }} </strong></a>|
+        {% endfor %}
 </div>
+	<style>
+		a {color:#337ab7;}
+	</style>
 {% endblock %}

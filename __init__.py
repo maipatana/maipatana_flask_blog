@@ -225,7 +225,9 @@ def logout():
 #  -------------------------------- Error Handling -------------------------------------#
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("404.html")
+    tags = [tag for p in flatpages if p.path.startswith(POSTS_DIR) for tag in p.meta.get('tags', []) ]
+    tags.sort()
+    return render_template("404.html", tags=set(tags))
 
 
 @app.errorhandler(405)
