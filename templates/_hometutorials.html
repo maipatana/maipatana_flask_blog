@@ -3,8 +3,6 @@
         <span class="fa fa-desktop fa-2x" aria-hidden="true"></span>
     </div>
     <div class="card-text">
-        <h3>Recent tutorials:</h3>
-        <p> Posts ....</p>
         <div>
           <!-- Nav tabs -->
           <ul class="nav nav-tabs nav-justified" role="tablist">
@@ -17,22 +15,48 @@
           </ul>
           <!-- Tab panes -->
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="energy">
-                ......
-            </div>
-            <div role="tabpanel" class="tab-pane" id="gh">
+            <div role="tabpanel" class="tab-pane active" id="energy"> <!-- Energy tab Content -->
                 <div><h3>
+                    Recent tutorials:
+                </h3>
+                {% for post in energy %}
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                {% endfor %}
+                </div>
+                <hr style="border-top: dotted 1px;" />
+                <div>
+                    <h3>
+                        ottv:
+                    </h3>
+                {% for post in ottv %}
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                {% endfor %}
+                </div>
+                <hr style="border-top: dotted 1px;" />
+                <div>
+                    <h3>
+                        simulation:
+                    </h3>
+                {% for post in simulation %}
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                {% endfor %}
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="gh"> <!-- Grasshopper tab Content -->
+                <div><h3><a href="#">
                     การหาค่า Lux ด้วย LB+HB
-                </h3></div>
+                </a></h3></div>
                 <div class="embed-responsive embed-responsive-16by9">
                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Uj9PDaNi2AI"
                           frameborder="0" allowfullscreen></iframe>
                 </div>
                 <hr style="border-top: dotted 1px;" />
                 <div><h3>
-                    posts:
+                    Recent tutorials:
                 </h3>
-                  <p><a href="#">....</a></p>
+                {% for post in grasshopper %}
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                {% endfor %}
                 </div>
                 <hr style="border-top: dotted 1px;" />
                 <div><h3>
@@ -41,7 +65,24 @@
                   <p><a href="https://www.youtube.com/embed/videoseries?list=PLgQM8gTApgUyyXE-GdWUWEL9nJIzOZGz2">Grasshopper เบื้องต้น</a></p>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="py">...</div>
+            <div role="tabpanel" class="tab-pane" id="py"> <!-- Python tab Content -->
+                <div><h3>
+                    Recent tutorials:
+                </h3>
+                {% for post in python %}
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                {% endfor %}
+                </div>
+                <hr style="border-top: dotted 1px;" />
+                <div>
+                    <h3>
+                        basic:
+                    </h3>
+                {% for post in basicpy %}
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                {% endfor %}
+                </div>
+            </div>
           </div>
         </div>
     </div>

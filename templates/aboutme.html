@@ -1,29 +1,59 @@
 {% extends "headermaipatana.html" %}
+{% block title %}about me{% endblock %}
+{% block head %}
+<meta name="description" content="Hi, my name is Patana Rattananavathong. I am the creator of maipatana.me. This page provides a little bit of information about me!" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@maipatana" />
+<meta name="twitter:creator" content="@maipatana" />
+<meta property="og:url"                content="http://maipatana.me{{request.path}}" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="about me" />
+<meta property="og:description"        content="Hi, my name is Patana Rattananavathong. I am the creator of maipatana.me. This page provides a little bit of information about me!" />
+<meta property="og:image"              content="{{ url_for('static', filename='images/aboutme_maipatana_1.jpg') }}" />
+{% endblock %}
 {% block body %}
 	<hr style="margin: 0;color:#999">
-		<h2 class="title" style="padding-bottom:5px;color:#999"><center>
+	<center>
+		<h1 class="title" style="padding-bottom:5px; color: #ffffff;" id="title">
 			about me
-		</center></h2>
+		</h1>
+	</center>
 	<hr style="margin: 0;color:#999">
 	<div class="row" style="margin-top:15px;">
 		<div class="col-md-4">
-			<div class="card card-block">
-				<h2 class="card-title"><center>whatisthis?</center></h2>
+			<div class="card-home card-img-aboutme">
+				<img src="{{ url_for('static', filename='images/aboutme_maipatana_1.jpg') }}" width="100%" alt="maipatana" class="card-img-top">
 			</div>
-			<div class="card card-block">
-			<p class="card-text">สวัสดีครับ ผมชื่อ พัฒนา นะครับ ชื่อเล่นชื่อ ใหม่</p>
+			<div class="card-home card-img-aboutme">
+				<img src="{{ url_for('static', filename='images/aboutme_maipatana_2.jpg') }}" width="100%" alt="maipatana" class="card-img-top">
 			</div>
-			<div class="card card-block">
-			<p class="card-text">Blog นี้เป็นที่ๆผมเขียนเรื่องต่างๆที่ผมอยากเขียน ส่วนมากเป็นเรื่องเกี่ยวกับสิ่งที่ผมคิด แล้วก็มีอีกส่วนก็คือ Tutorial นะครับ</p>
-			</div>
-			<div class="card card-block">
-			<h4 class="card-title">สามารถติดตามผมได้ที่</h4>
-			<p class="card-text">Facebook:</p>
-			<p class="card-text">Youtube:</p>
+			<div class="card-home card-img-aboutme">
+				<img src="{{ url_for('static', filename='images/aboutme_maipatana_3.jpg') }}" width="100%" alt="maipatana" class="card-img-top">
 			</div>
 		</div>
 		<div class="col-md-8">
- 
+			<div class="card-home">
+				<p class="card-text">Hello! สวัสดีครับ</p>
+				<p class="card-text">Welcome to my blog. I hope you find something useful from here.</p>
+			</div>
+			<div class="card-home">
+				<p class="card-text">Name: Patana Rattananvathong (Mai)</p>
+				<p class="card-text">ชื่อ: พัฒนา รัตนนาวาทอง (ใหม่)</p>
+			</div>
+			<div class="card-home">
+				<h4 class="card-title">Work:</h4>
+				<p class="card-text">Part-time Researcher @ Cardiff University, UK</p>
+				<p class="card-text">Sustainable Building Research and Development @ Architects 49, Thailand</p>
+			</div>
+			<div class="card-home">
+				<h4 class="card-title">Education:</h4>
+				<p class="card-text">PhD Candidate in Architecture @ Cardiff University, UK (Currently)</p>
+				<p class="card-text">MSc of Sustainable Buildings and Environments @ Newcastle University, UK</p>
+				<p class="card-text">Bachelor of Architecture @ Rangsit University, Thailand</p>
+			</div>
+			<div class="card-home">
+			{% include "_contact.html" %}
+			</div>
 		</div>
 	</div>
 {% endblock %}

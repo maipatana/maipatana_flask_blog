@@ -5,8 +5,19 @@
     {% elif post %}
         {{ post.title }}
     {% else %}
-        blogs
+        {{ cat }}
     {% endif %}
+{% endblock %}
+{% block head %}
+<meta name="description" content="{{ post.description }}" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@maipatana" />
+<meta name="twitter:creator" content="@maipatana" />
+<meta property="og:url"                content="http://maipatana.me{{request.path}}" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="{{ post.title }}" />
+<meta property="og:description"        content="{{ post.description }}" />
+<meta property="og:image"              content="{{ post.image }}" />
 {% endblock %}
 {% block body %}
 <!-- PageTitle -->
@@ -15,51 +26,47 @@
 <!-- Page Body -->
 	<div class="row" style="margin-top:15px;">
         <div class="col-md-12">
-		<!--<div class="col-md-8 col-md-push-4">-->
-            <div>
-			    <p class="card-text"><strong>Published:</strong> {{ post.date }} | <strong>tags:</strong>
-				{% for i in post.tags %}
-					 <a href="{{ url_for('tags', tag=i) }}"><strong>  {{ i }}</strong></a>,
-				{% endfor %}
-                </p>
-			</div>
-            <hr>
-            <br>
             <div class="row-full">
                 <div class="card-content">
+                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date }}</p>
                     {{ post.html|safe }}
+                </div>
+                    <!-- Share Button -->
+                <div style="margin-left:20px">
+                    {% include "_socialshare.html" %}
+
+                    <!-- End Share -->
+                <br>
+                <p><i class="fa fa-tags" aria-hidden="true"></i> |
+                    {% for i in post.tags %}
+                         <a href="{{ url_for('tags', tag=i) }}" style="color:white;">  {{ i }}</a> |
+                    {% endfor %}
+                </p>
+                </div>
+                <div class="card-comment">
+                    <center>
+                        <div class="fb-comments" data-href="http://maipatana.me{{request.path}}" data-width="600" data-numposts="5"></div>
+                    </center>
                 </div>
             </div>
         </div>
-<!-- End Body -->
-<!-- SideBar -->
-        <div class="col-md-6">
-	    <!--<div class="col-md-4 col-md-pull-8">-->
-            <div>
-                <hr style="border-top: dotted 1px;" />
-                <h4 class="card-title"><center>โพสล่าสุด</center></h4>
-                <hr style="border-top: dotted 1px;" />
-            </div>
-            <div>
-                {% for post in posts %}
-                <p class"card-text">
-                <a href="{{ url_for('post', name=post.path.replace('blogs/', '')) }}">{{ post.title }}</a>
-                </p>
-                {% endfor %}
-			</div>
-        </div>
-        <div class="col-md-6">
-            <hr style="border-top: dotted 1px;" />
-            {% include "_followme.html"%}
-		</div>
     </div>
-<div class="row" style="margin-top:15px;">
-        <div class="col-md-6">
-            <hr style="border-top: dotted 1px;" />
-        </div>
-        <div class="col-md-6">
-         <hr style="border-top: dotted 1px;" />
-        </div>
-</div>
+<!-- End Body -->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async"　defer="defer"></script>
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=363234634013447";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer>
+    {lang: 'en-GB'}
+</script>
 <!-- End SideBar -->
 {% endblock %}

@@ -10,5 +10,13 @@
           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/H0_RX75cx44"
                   frameborder="0" allowfullscreen>></iframe>
         </div>
+        <hr style="border-top: dotted 1px;" />
+        <div><h3>
+            Recent projects:
+        </h3>
+        {% for post in projects %}
+            <p><a href="{{ url_for('project', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+        {% endfor %}
+        </div>
     </div>
 </div>

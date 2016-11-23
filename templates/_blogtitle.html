@@ -1,12 +1,12 @@
 <hr style="margin: 0;color:#999">
-	<h1 class="title" style="padding-bottom:5px; color: #ececec;" id="title">
+	<h1 class="title" style="padding-bottom:5px; color: #ffffff;" id="title">
 		<center>
 		{% if tag %}
-		tag: {{ tag }}
+			tag: {{ tag }}
 		{% elif post %}
-		{{ post.title }}
+			{{ post.title }}
 		{% else %}
-		blogs
+			{{ posts[0].cats }}
 		{% endif %}
 		</center>
 	</h1>

@@ -1,29 +1,49 @@
 {% extends "headermaipatana.html" %}
+{% block title %}
+    {% if tag %}
+        {{ tag }}
+    {% elif post %}
+        {{ post.title }}
+    {% else %}
+        {{ cat }}
+    {% endif %}
+{% endblock %}
+{% block head %}
+<meta name="description" content="ส่วนของ tutorials จะเกี่ยวกับเทคนิคต่างๆที่ผมอยากจะแชร์ มีทั้งที่เป็นแบบซีรีย์ยาวและเรื่องเล็กๆน้อยๆครับ" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@maipatana" />
+<meta name="twitter:creator" content="@maipatana" />
+<meta property="og:url"                content="http://maipatana.me{{request.path}}" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="tutorials" />
+<meta property="og:description"        content="ส่วนของ tutorials จะเกี่ยวกับเทคนิคต่างๆที่ผมอยากจะแชร์ มีทั้งที่เป็นแบบซีรีย์ยาวและเรื่องเล็กๆน้อยๆครับ" />
+<meta property="og:image"              content="{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
+{% endblock %}
 {% block body %}
-	<hr style="margin: 0;color:#999">
-		<h2 class="title" style="padding-bottom:5px;color:#999"><center>
-			tutorials
-		</center></h2>
-	<hr style="margin: 0;color:#999">
+<!-- PageTitle -->
+	{% include "_blogtitle.html"%}
+<!-- End PageTitle -->
+<!-- Page Body -->
 	<div class="row" style="margin-top:15px;">
-		<div class="col-md-4">
-			<div class="card card-block">
-				<h2 class="card-title"><center>whatisthis?</center></h2>
-			</div>
-			<div class="card card-block">
-			<p class="card-text">สวัสดีครับ ผมชื่อ พัฒนา นะครับ ชื่อเล่นชื่อ ใหม่</p>
-			</div>
-			<div class="card card-block">
-			<p class="card-text">Blog นี้เป็นที่ๆผมเขียนเรื่องต่างๆที่ผมอยากเขียน ส่วนมากเป็นเรื่องเกี่ยวกับสิ่งที่ผมคิด แล้วก็มีอีกส่วนก็คือ Tutorial นะครับ</p>
-			</div>
-			<div class="card card-block">
-			<h4 class="card-title">สามารถติดตามผมได้ที่</h4>
-			<p class="card-text">Facebook:</p>
-			<p class="card-text">Youtube:</p>
-			</div>
+		<div class="col-md-8 col-md-push-4">
+			<!-- Start Blog Posts -->
+			{% include "_bloglist.html"%}
 		</div>
-		<div class="col-md-8">
- 
+<!-- End Body -->
+
+<!-- SideBar -->
+		<div class="col-md-4 col-md-pull-8">
+			<div>
+				<center><h2 class="card-title">whatisthis</h2></center>
+			</div>
+			<div>
+				<hr style="border-top: dotted 1px;" />
+				<p class="card-text">tutorials คืออะไร?</p>
+				<p class="card-text">ส่วนของ tutorials จะเกี่ยวกับเทคนิคต่างๆที่ผมอยากจะแชร์ มีทั้งที่เป็นแบบซีรีย์ยาวและเรื่องเล็กๆน้อยๆครับ</p>
+				<hr style="border-top: dotted 1px;" />
+			</div>
+			{% include "_news.html "%}
 		</div>
 	</div>
+<!-- End SideBar -->
 {% endblock %}
