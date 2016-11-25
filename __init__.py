@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, render_template_string, Markup, request, redirect, url_for, session, make_response
-from flask_flatpages import FlatPages, pygmented_markdown
+from flask_flatpages import FlatPages
+from flask_flatpages.utils import pygmented_markdown
 from contactform import ContactForm
 from flask_wtf.csrf import CsrfProtect
 from flask_mail import Message, Mail
@@ -9,7 +10,6 @@ from flask_mail import Message, Mail
 app = Flask(__name__)
 
 app.secret_key = os.urandom(36)
-flatpages = FlatPages(app)
 
 app.config.from_object(__name__)
 
@@ -24,7 +24,7 @@ app.config["MAIL_PASSWORD"] = os.environ.get('MAIL_PASSWORD')
 
 mail=Mail(app)
 
-HOSTING_DOMAIN = "http://maipatana.me"
+HOSTING_DOMAIN = "https://maipatana.me"
 
 #  ------------------------ Markdown Content System Management ------------------------ #
                                                                                         #
@@ -44,13 +44,19 @@ def pagenum(totalposts, postperpage):
         num += 1
     return pages
 
-# Take Jinja
-def prerender_jinja(text):
-    return pygmented_markdown(render_template_string(Markup(text)))
+# # Take Jinja
+# def prerender_jinja(text):
+#     return pygmented_markdown(render_template_string(Markup(text)))
+
+def my_renderer(text):
+    prerendered_body = render_template_string(text)
+    return pygmented_markdown(prerendered_body)
 
 app.config['FLATPAGES_ROOT'] = 'content'
 app.config['FLATPAGES_EXTENSION'] = '.md'
-app.config['FLATPAGES_HTML_RENDERER'] = prerender_jinja
+app.config['FLATPAGES_HTML_RENDERER'] = my_renderer
+
+flatpages = FlatPages(app)
 #  ------------------------ Markdown Content System Management ------------------------ #
 
 #  -------------------------------------- Blogs ----------------------------------------#
@@ -65,7 +71,7 @@ def posts(page):
     total = len(posts)
     pages = pagenum(total, per_page)
     posts = posts[(page*per_page)-per_page:page*per_page]
-    return render_template('posts.html', posts=posts, page=page, pages=pages)
+    return render_template('posts.html', posts=posts, page=page, pages=pages, cat=cat)
 
 
 @app.route('/blogs/<name>/')
@@ -99,7 +105,7 @@ def tutorials(page):
     total = len(posts)
     pages = pagenum(total, per_page)
     posts = posts[(page*per_page)-per_page:page*per_page]
-    return render_template('tutorials.html', posts=posts, page=page, pages=pages)
+    return render_template('tutorials.html', posts=posts, page=page, pages=pages, cat=cat)
 
 
 @app.route('/tutorials/<name>/')
@@ -121,7 +127,7 @@ def projects(page):
     total = len(posts)
     pages = pagenum(total, per_page)
     posts = posts[(page*per_page)-per_page:page*per_page]
-    return render_template('projects.html', posts=posts, page=page, pages=pages)
+    return render_template('projects.html', posts=posts, page=page, pages=pages, cat=cat)
 
 
 @app.route(u'/projects/<name>/')
@@ -166,7 +172,6 @@ def aboutme():
 def home():
     # Recent Posts
     tags = [tag for p in flatpages if p.path.startswith(POSTS_DIR) for tag in p.meta.get('tags', []) ]
-    tags.sort()
     blogs = [p for p in flatpages if p.path.startswith(POSTS_DIR) and 'blogs' in p.meta.get('cats', [])]
     blogs.sort(key=lambda item:item['date'], reverse=True)
     projects = [p for p in flatpages if p.path.startswith(POSTS_DIR) and 'projects' in p.meta.get('cats', [])]
@@ -226,7 +231,6 @@ def logout():
 @app.errorhandler(404)
 def page_not_found(e):
     tags = [tag for p in flatpages if p.path.startswith(POSTS_DIR) for tag in p.meta.get('tags', []) ]
-    tags.sort()
     return render_template("404.html", tags=set(tags))
 
 
@@ -255,9 +259,9 @@ def robot():
     User-agent: *
     Disallow: /logout/
     Allow: /
-    Sitemap: http://maipatana.me/sitemap.xml
+    Sitemap: https://maipatana.me/sitemap.xml
     """)
 
 # Run App
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

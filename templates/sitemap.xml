@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>
-            http://maipatana.me/
+            https://maipatana.me/
         </loc>
     </url>
     <url>
         <loc>
-            http://maipatana.me/blogs/
+            https://maipatana.me/blogs/
         </loc>
     </url>
     <url>
         <loc>
-            http://maipatana.me/tutorials/
+            https://maipatana.me/tutorials/
         </loc>
     </url>
     <url>
         <loc>
-            http://maipatana.me/projects/
+            https://maipatana.me/projects/
         </loc>
     </url>
     <url>
         <loc>
-            http://maipatana.me/aboutme/
+            https://maipatana.me/aboutme/
         </loc>
     </url>
 {% for post in posts %}
     <url>
     {% if post.cats == 'blogs' %}
-        <loc>http://maipatana.me{{ url_for('post', name=post.path.replace('blogs/', '')) }}</loc>
+        <loc>https://maipatana.me{{ url_for('post', name=post.path.replace('blogs/', '')) }}</loc>
     {% elif post.cats == 'tutorials' %}
-        <loc>http://maipatana.me{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}</loc>
+        <loc>https://maipatana.me{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}</loc>
     {% elif post.cats == 'projects' %}
-        <loc>http://maipatana.me{{ url_for('project', name=post.path.replace('blogs/', '')) }}</loc>
+        <loc>https://maipatana.me{{ url_for('project', name=post.path.replace('blogs/', '')) }}</loc>
     {% endif %}
         <lastmod>{{ post.date }}</lastmod>
     </url>

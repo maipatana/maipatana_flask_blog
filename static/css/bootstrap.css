@@ -7151,13 +7151,31 @@ h1 {
 h2 {
   font-size: 3.0vh;
 }
+
 @media (max-width: 992px) {
     .card-img-aboutme {
     display: none;
     }
 }
 
+@media (max-width: 768px) {
+    blockquote,
+    div > .card-content > ol > li > span,
+    div > .card-content > p > span {
+    font-size: 11pt;
+    }
+    div > .card-content > p {
+    font-size: 11pt;
+    }
+    div > .card-content{
+    padding: 20px;
+    }
+}
+
 @media (max-width: 480px) {
+    div > .card-content{
+    padding: 10px;
+    }
     .container {
     padding:0;
     margin:0;
@@ -7169,6 +7187,14 @@ h2 {
     .container-fluid {
     padding:0;
     margin:0;
+    }
+    div > .card-content > ol > li > span,
+    div > .card-content > p > span {
+    font-size: 10.5pt !important;
+    }
+    blockquote,
+    div > .card-content > p {
+    font-size: 10.5pt;
     }
 }
 
@@ -7236,10 +7262,18 @@ h2 {
     filter: grayscale(0%);
 }
 
+.aligncenter > img,
 .aligncenter {
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
+    height: auto;
+    display: block;
 }
 
+.card-content > p > span,
+.card-content > p {
+    font-size: 12pt;
+    margin-top: 2%;
+    }
 /*# sourceMappingURL=bootstrap.css.map */

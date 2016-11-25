@@ -20,7 +20,7 @@
                     Recent tutorials:
                 </h3>
                 {% for post in energy %}
-                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a></p>
                 {% endfor %}
                 </div>
                 <hr style="border-top: dotted 1px;" />
@@ -29,7 +29,7 @@
                         ottv:
                     </h3>
                 {% for post in ottv %}
-                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a></p>
                 {% endfor %}
                 </div>
                 <hr style="border-top: dotted 1px;" />
@@ -38,7 +38,7 @@
                         simulation:
                     </h3>
                 {% for post in simulation %}
-                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a></p>
                 {% endfor %}
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     Recent tutorials:
                 </h3>
                 {% for post in grasshopper %}
-                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a></p>
                 {% endfor %}
                 </div>
                 <hr style="border-top: dotted 1px;" />
@@ -70,7 +70,7 @@
                     Recent tutorials:
                 </h3>
                 {% for post in python %}
-                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a></p>
                 {% endfor %}
                 </div>
                 <hr style="border-top: dotted 1px;" />
@@ -79,7 +79,7 @@
                         basic:
                     </h3>
                 {% for post in basicpy %}
-                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+                    <p><a href="{{ url_for('tutorial', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a></p>
                 {% endfor %}
                 </div>
             </div>

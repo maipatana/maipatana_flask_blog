@@ -2,19 +2,19 @@
 <html lang="en" id="top">
 <head>
 	<meta charset = "utf-8">
-	<title>maipatana's {% block title %}{% endblock %}</title>
+	<title>{% block title %}{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta property="fb:app_id" content="1386955211319076" />
+	{% block head %} {% endblock %}
 	<link href = "{{ url_for('static', filename = 'css/bootstrap.css')}}" rel="stylesheet">
 	<link href = "{{ url_for('static', filename = 'css/codehilite.css')}}" rel="stylesheet">
 	<link href = "{{ url_for('static', filename = 'css/font-awesome.css')}}" rel="stylesheet">
 	<link rel = "shortcut icon" href = "{{ url_for('static', filename = 'favicon.ico')}}">
 	<link rel="stylesheet" href="{{ url_for('static', filename = 'fonts/thsarabunnew.css')}}"/>
-    {% block head %} {% endblock %}
 </head>
 <body style=" font-family: 'THSarabunNew', sans-serif;
-	background-color: #9fb39f; color: #1a1a1a; margin: 0 auto; max-width: 900px; padding: 10px">
+	background-color: #9fb39f; color: #1a1a1a; margin: 0 auto; max-width: 900px; padding: 10px; line-height: 1.8;">
 <!-- Return to Top -->
 <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
 	<div class="container-fluid" style="min-height: 100vh;">

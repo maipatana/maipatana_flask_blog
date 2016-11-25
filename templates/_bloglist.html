@@ -13,7 +13,7 @@
         <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ post.date }}</small></p>
         <p class="card-text">{{ post.description }}</p>
         <p class="card-text"><i class="fa fa-tags" aria-hidden="true"></i> |
-        {% for i in post.tags %}
+        {% for i in post.tags|sort %}
              <a href="{{ url_for('tags', tag=i) }}" style="color:white;">  {{ i }} </a>|
         {% endfor %}
         </p>
@@ -65,6 +65,10 @@
               {% for i in pages %}
                 {% if i == page %}
                     <li class="active"><a href="#title">{{i}} <span class="sr-only">(current)</span></a></li>
+                {% elif cat == "tutorials" %}
+                    <li><a href="{{ url_for('tutorials', page=i) }}">{{i}}</a></li>
+                {% elif cat == "projectss" %}
+                    <li><a href="{{ url_for('projects', page=i) }}">{{i}}</a></li>
                 {% else %}
                     <li><a href="{{ url_for('posts', page=i) }}">{{i}}</a></li>
                 {% endif %}

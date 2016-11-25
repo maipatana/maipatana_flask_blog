@@ -4,17 +4,20 @@
     </div>
     <div class="card-text">
         <h3>Popular:</h3>
-            <a href="{{ url_for('post', name='new new') }}"><h4>Title:</h4></a>
-            <img src="{{ url_for('static', filename = 'images/maipatanalogo.jpg')}}" alt="maipatana">
-            <p>Description:</p>
+            <a href="{{ url_for('post', name='การเรียนสถาปัตย์ปีที่-2') }}"><h4>การเรียนสถาปัตย์ปีที่ 2 ที่ Welsh School of Architecture (WSA)</h4></a>
+            <img style="margin-left: auto;margin-right: auto;max-width: 100%; width:auto; max-height: 200px;display: block;"
+                 src="{{ url_for('static', filename = 'images/2016/06/การเรียนสถาปัตย์ปีที่-2-ที่-Welsh-School-of-Architecture_Aging_Town_Site_Analysis_002.jpg')}}"
+                 alt="การเรียนสถาปัตย์ปีที่ 2 ที่ Welsh School of Architecture_บรรยากาศ">
+            <br>
+            <p>Description: การเรียนสถาปัตย์ปีที่ 2 ที่ Welsh School of Architecture (WSA), Cardiff University มีบรรยากาศในการเรียนอย่างไร เรียนอะไรบ้าง วันนี้น้องเพลงจะมาเล่าให้เราฟัง</p>
         <hr style="border-top: dotted 1px;" />
         <h3>Recent blogs:</h3>
         {% for post in blogs %}
-            <p><a href="{{ url_for('post', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a>{{ post.date }}</p>
+            <p><a href="{{ url_for('post', name=post.path.replace('blogs/', '')) }}"><strong>{{ post.title }} </strong></a></p>
         {% endfor %}
         <hr style="border-top: dotted 1px;" />
         <h3>tags: </h3>|
-        {% for i in tags %}
+        {% for i in tags|sort %}
              <a href="{{ url_for('tags', tag=i) }}"><strong>  {{ i }} </strong></a>|
         {% endfor %}
     </div>

@@ -1,11 +1,11 @@
 {% extends "headermaipatana.html" %}
 {% block title %}
     {% if tag %}
-        {{ tag }}
+        {{ tag }} - maipatana
     {% elif post %}
-        {{ post.title }}
+        {{ post.title }} - maipatana
     {% else %}
-        {{ cat }}
+        maipatana's {{ cat }}
     {% endif %}
 {% endblock %}
 {% block head %}
@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@maipatana" />
 <meta name="twitter:creator" content="@maipatana" />
-<meta property="og:url"                content="http://maipatana.me{{request.path}}" />
+<meta property="og:url"                content="https://maipatana.me{{request.path}}" />
 <meta property="og:type"               content="article" />
 <meta property="og:title"              content="tutorials" />
 <meta property="og:description"        content="จริงๆควรเรียก mini projects มากกว่า เพราะผมชอบทำเรื่องโน้นเรื่องนี้ เล่นนั่นนี่ไปเรื่อย" />
