@@ -80,7 +80,7 @@ def main():
             elif speech == "hello Alice":
                 print("Hello")
                 time.sleep(2)
-                os.system("start F:\Python\AI\HowcanIhelpyou.wav")   
+                os.system("start HowcanIhelpyou.wav")   
                 
             elif speech == "what time is it":
                 print ("Let me Check")
