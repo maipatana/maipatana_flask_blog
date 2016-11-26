@@ -15,9 +15,13 @@
 <meta name="twitter:creator" content="@maipatana" />
 <meta property="og:url"                content="https://maipatana.me{{request.path}}" />
 <meta property="og:type"               content="article" />
-<meta property="og:title"              content="tutorials" />
+<meta property="og:title"              content="maipatana's blogs" />
 <meta property="og:description"        content="Blog นี้เป็นที่ๆผมเขียนเรื่องต่างๆที่ผมอยากเขียน ส่วนมากเป็นเรื่องเกี่ยวกับสิ่งที่ผมคิด ทั้งเรื่องสถาปัตยกรรม สังคม และอื่นๆ" />
-<meta property="og:image"              content="{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
+<meta property="og:image"              content="http://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
+<meta property="og:image:secure_url" content="https://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:type" content="image/jpeg" />
 {% endblock %}
 {% block body %}
 <!-- PageTitle -->

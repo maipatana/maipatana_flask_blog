@@ -17,7 +17,11 @@
 <meta property="og:type"               content="article" />
 <meta property="og:title"              content="{{ post.title }} - maipatana" />
 <meta property="og:description"        content="{{ post.description }}" />
-<meta property="og:image"              content="https://maipatana.me{{ post.image }}" />
+<meta property="og:image"              content="http://maipatana.me{{ post.image }}" />
+<meta property="og:image:secure_url" content="https://maipatana.me{{ post.image }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:type" content="image/jpeg" />
 <meta property="article:published_time" content="{{ post.date }}" />
 <meta property="article:section" content="{{ post.cats }}" />
 <meta property="og:site_name" content="maipatana" />
@@ -42,11 +46,11 @@
                             <i class="fa fa-share-alt fa-lg" aria-hidden="true"></i></a>
                         </p>
                     {{ post.html|safe }}
+                <div class="fb-quote"></div>
                 </div>
                     <!-- Share Button -->
                 <div style="margin-left:20px">
                     {% include "_socialshare.html" %}
-
                     <!-- End Share -->
                 <br>
                 <p><i class="fa fa-tags" aria-hidden="true"></i> |
@@ -64,8 +68,6 @@
         </div>
     </div>
 <!-- End Body -->
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 <div id="fb-root"></div>
 <script>
 (function(d, s, id) {

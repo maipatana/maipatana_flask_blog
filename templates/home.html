@@ -12,9 +12,13 @@
 	<meta name="twitter:creator" content="@maipatana" />
 	<meta property="og:url"                content="https://maipatana.me/" />
 	<meta property="og:type"               content="website" />
-	<meta property="og:title"              content="tutorials" />
+	<meta property="og:title"              content="maipatana's home" />
 	<meta property="og:description"        content="maipatana's blog เป็นเว็บที่เขียนเกี่ยวกับสถาปัตยกรรม สังคม และอื่นๆ และมีส่วนของ tutorials และ projects เพื่อแบ่งปันเรื่องราวต่างๆ" />
-	<meta property="og:image"              content="https://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
+	<meta property="og:image"              content="http://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
+	<meta property="og:image:secure_url" content="https://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="900" />
+	<meta property="og:image:type" content="image/jpeg" />
 	<link href = "{{ url_for('static', filename = 'css/bootstrap.css')}}" rel="stylesheet">
 	<link href = "{{ url_for('static', filename = 'css/font-awesome.css')}}" rel="stylesheet">
 	<link rel = "shortcut icon" href = "{{ url_for('static', filename = 'favicon.ico')}}">
@@ -45,7 +49,7 @@
 		</div>
 	</div>
 		{% include "_contact.html" %}
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/backtotop.js') }}"></script>
 </body>

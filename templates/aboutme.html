@@ -7,9 +7,13 @@
 <meta name="twitter:creator" content="@maipatana" />
 <meta property="og:url"                content="https://maipatana.me{{request.path}}" />
 <meta property="og:type"               content="article" />
-<meta property="og:title"              content="about me" />
+<meta property="og:title"              content="maipatana's about me" />
 <meta property="og:description"        content="Hi, my name is Patana Rattananavathong. I am the creator of maipatana.me. This page provides a little bit of information about me!" />
-<meta property="og:image"              content="{{ url_for('static', filename='images/aboutme_maipatana_1.jpg') }}" />
+<meta property="og:image"              content="http://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
+<meta property="og:image:secure_url" content="https://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:type" content="image/jpeg" />
 {% endblock %}
 {% block body %}
 	<hr style="margin: 0;color:#999">
