@@ -137,6 +137,18 @@ def project(name):
     return render_template('post.html', post=post)
 
 
+#  ---------------------------- Redirect from old urls----------------------------------#
+                                                                                        #
+                                                                                        #
+@app.route(u'/<name>/')
+def redirectfromoldurls(name):
+    path = u'{}/{}'.format(POSTS_DIR, name)
+    post = flatpages.get_or_404(path)
+    if "tutorials" in post.meta.get('cats',[]):
+        return redirect(url_for('tutorial',name=name), code=301)
+    return redirect(url_for('post', name=name), code=301)
+
+
 #  ------------------------------------ About Me ---------------------------------------#
                                                                                         #
                                                                                         #
@@ -264,4 +276,4 @@ def robot():
 
 # Run App
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
