@@ -1,16 +1,8 @@
-{% extends "headermaipatana.html" %}
-{% block title %}
-    {% if tag %}
-        {{ tag }} - maipatana
-    {% elif post %}
-        {{ post.title }} - maipatana
-    {% else %}
-        maipatana's {{ cat }}
-    {% endif %}
-{% endblock %}
+{% extends "layout.html" %}
+{% block title %}maipatana's projects{% endblock %}
 {% block head %}
 <meta name="description" content="จริงๆควรเรียก mini projects มากกว่า เพราะผมชอบทำเรื่องโน้นเรื่องนี้ เล่นนั่นนี่ไปเรื่อย" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@maipatana" />
 <meta name="twitter:creator" content="@maipatana" />
 <meta property="og:url"                content="https://maipatana.me{{request.path}}" />
@@ -18,10 +10,10 @@
 <meta property="og:title"              content="maipatana's projects" />
 <meta property="og:description"        content="จริงๆควรเรียก mini projects มากกว่า เพราะผมชอบทำเรื่องโน้นเรื่องนี้ เล่นนั่นนี่ไปเรื่อย" />
 <meta property="og:image"              content="http://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
-<meta property="og:image:secure_url" content="https://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" />
-<meta property="og:image:width" content="1200" />
+<meta property="og:image:secure_url" content="https://maipatana.me{{ url_for('static', filename='images/maipatanalogo.jpg') }}" /> 
+<meta property="og:image:width" content="1200" /> 
 <meta property="og:image:height" content="900" />
-<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:type" content="image/jpeg" /> 
 {% endblock %}
 {% block body %}
 <!-- PageTitle -->
@@ -48,7 +40,7 @@
 				<p class="card-text">แต่ก็เป็นโปรเจคที่ผมอยากจะแชร์เผื่อคนอื่นเอาไปทำต่อหรือหาประโยชน์ได้ครับ</p>
 				<hr style="border-top: dotted 1px;" />
 			</div>
-			{% include "_news.html "%}
+			{% include "_news.html" %}
 		</div>
 	</div>
 <!-- End SideBar -->

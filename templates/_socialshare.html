@@ -13,13 +13,9 @@
          data-action="share"
          data-size="small" style="vertical-align:middle;"></div>
     <!-- twitter -->
-	<!--data-text="{{post.title}}"
-	data-hashtags='{{post.tags|string|replace("'","")|replace("[","")|replace("]","")|replace(" ","") }}'-->
-    <a href="https://twitter.com/share"
-    data-text="{{post.title}}"
-    data-hashtags="maipatana"
-	data-via="maipatana"
-       class="twitter-share-button"
+    <a class="twitter-share-button"
+		href="https://twitter.com/share"
+		data-text="{{post.title}} #{{post.tags|join(" #")|replace('[','')|replace(']','')|replace(" ","")|replace("#"," #") }} via @maipatana"
        data-show-count="false"
        style="vertical-align:middle;">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script>
     <!-- google plus -->
