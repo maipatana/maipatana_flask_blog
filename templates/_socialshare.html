@@ -13,10 +13,16 @@
          data-action="share"
          data-size="small" style="vertical-align:middle;"></div>
     <!-- twitter -->
-    <a href="https://twitter.com/share?url=https://maipatana.me{{request.path}}&amp;text=[maipatana's%20blog]%20&amp;hashtags=maipatana&amp;via=maipatana"
-       class="twitter-share-button" data-show-count="false" style="vertical-align:middle;">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script>
+	<!--data-text="{{post.title}}"
+	data-hashtags='{{post.tags|string|replace("'","")|replace("[","")|replace("]","")|replace(" ","") }}'-->
+    <a href="https://twitter.com/share"
+    data-text="{{post.title}}"
+    data-hashtags="maipatana"
+	data-via="maipatana"
+       class="twitter-share-button"
+       data-show-count="false"
+       style="vertical-align:middle;">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script>
     <!-- google plus -->
     <div class="g-plus" data-action="share" data-href="https://maipatana.me{{request.path}}" style="vertical-align:middle;"></div>
     </div>
 </div>
-
