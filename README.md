@@ -4,6 +4,19 @@ This is the code of my website that I am working on.<br>
 The are three major parts; blogs, tutorials and projects.<br>
 I am migrating from WordPress (maipatana.me) to flask.<br>
 Hopefully I can launch this blog within this year.<br>
+<br>
+Libraries I use at the moment:<br>
+Flask (0.11.1)<br>
+Flask-FlatPages (0.6)<br>
+Flask-Mail (0.9.1)<br>
+Flask-WTF (0.13.1)<br>
+Jinja2 (2.8)<br>
+Markdown (2.6.7)<br>
+MarkupSafe (0.23)<br>
+Pygments (2.1.3)<br>
+PyYAML (3.12)<br>
+<br>
+Basically, you only need Flask, Flask-FlatPages, Flask-Mail, Flask-WTF and Pygments. The rest are installed along with others already.
 
 --------2016/11/26----------
 
