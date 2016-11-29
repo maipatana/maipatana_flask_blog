@@ -48,6 +48,7 @@ def writetolcd(text):  # This is to send message to display on Arduino's LED Scr
 
 
 def main():
+    run = True
     while run == True:
         with m as source: r.adjust_for_ambient_noise(source)
         print("Set minimum energy threshold to {}".format(r.energy_threshold))
