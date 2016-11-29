@@ -1,24 +1,41 @@
 <div class="row" id="socialshare">
-    <!-- facebook -->
     <div class="social-share">
-    <div class="fb-like"
-         data-href="https://maipatana.me{{request.path}}"
-         data-layout="button_count"
-         data-action="like"
-         data-size="small"
-         data-show-faces="true" style="vertical-align:middle;"></div>
-    <div class="fb-share-button"
-         data-href="https://maipatana.me{{request.path}}"
-         data-layout="button_count"
-         data-action="share"
-         data-size="small" style="vertical-align:middle;"></div>
-    <!-- twitter -->
-    <a class="twitter-share-button"
-		href="https://twitter.com/share"
-		data-text="{{post.title}} #{{post.tags|join(" #")|replace('[','')|replace(']','')|replace(" ","")|replace("#"," #") }} via @maipatana"
-       data-show-count="false"
-       style="vertical-align:middle;">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script>
-    <!-- google plus -->
-    <div class="g-plus" data-action="share" data-href="https://maipatana.me{{request.path}}" style="vertical-align:middle;"></div>
+            <!-- facebook -->
+        <div class="fb-like"
+             data-href="https://maipatana.me{{request.path}}"
+             data-layout="button_count"
+             data-action="like"
+             data-size="small"
+             data-show-faces="true" style="vertical-align:middle;">
+        </div>
+        <div class="fb-share-button"
+             data-href="https://maipatana.me{{request.path}}"
+             data-layout="button_count"
+             data-action="share"
+             data-size="small" style="vertical-align:middle;">
+        </div>
+        <!-- Pinterest -->
+        <a data-pin-do="buttonBookmark"
+           data-pin-save="true"
+           data-pin-tag='{{ post.tags|join(",") }}'
+           data-pin-description="{{post.discription}}"
+           href="https://www.pinterest.com/pin/create/button/">
+        </a>
+        <script
+            type="text/javascript"
+            data-pin-hover ="any value"
+            async defer
+            src="https://assets.pinterest.com/js/pinit.js"
+        ></script>
+        <!-- twitter -->
+        <a class="twitter-share-button"
+            href="https://twitter.com/share"
+            data-text="{{post.title}} #{{post.tags|join(" #")|replace('[','')|replace(']','')|replace(" ","")|replace("#"," #") }} via @maipatana"
+           data-show-count="false"
+           style="vertical-align:middle;">Tweet
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js"></script>
+        <!-- google plus -->
+        <div class="g-plus" data-action="share" data-href="https://maipatana.me{{request.path}}" style="vertical-align:middle;"></div>
     </div>
 </div>
