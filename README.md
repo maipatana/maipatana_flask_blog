@@ -23,11 +23,11 @@ Basically, you only need Flask, Flask-FlatPages, Flask-Mail, Flask-WTF and Pygme
 The website is up on 26/11/2016. There are some minor additions that I didn't put it up on GitHub.<br>
 For example, Google Analytic tracking code. However, the overall structure is the same.<br>
 <br>
-It is important to note that in order for Flask-Flatpages to ready non-ascii Markdown filenames, <br>
+It is important to note that in order for Flask-Flatpages to be ready for non-ascii Markdown filenames, <br>
 You should go to `/usr/local/lib/python2.7/dist-packages/flask_flatpages` or whereever your package is.<br>
 Then open the file `flatpages.py`. At around line 191, I changed os.walk("My full path to Markdown files folder.")<br>
 `for cur_path, _, filenames in os.walk("/var/www/FlaskApp/FlaskApp/content/blogs"):`<br>
-Also at a few lines below, `I added .decode('utf-8')`.<br>
+Also at a few lines below, I added `.decode('utf-8')`.<br>
 Like this `path = u'/'.join(path_prefix + (name_without_extension.decode('utf-8'), ))`.<br>
 <br>
 This will make reading non-ascii filename with no problem.<br>
