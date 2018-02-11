@@ -219,7 +219,7 @@ def home():
         message = form.message.data
         subject = form.subject.data
         msg = Message('[maipatana]'+subject,
-                      sender=emai, recipients= ['maipatana@gmail.com'])
+                      sender=email, recipients= ['maipatana@gmail.com'])
         msg.body = """
         From: %s Email: %s
         %s
